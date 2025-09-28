@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Bife - Restaurante</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="bife.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Apresentação -->
+  <main id="inicio">
+    <section class="apresentacao">
+      <img src="IMG/Bib-2024.webp" alt="Fachada do restaurante Le Bife" class="imagem" />
+      <h1>Bem-vindo ao Le Bife</h1>
+      <p>
+        O Le Bife é mais que um restaurante especializado em <span>carnes</span>. Inspirado na "Bistronomie" francesa, oferece pratos de excelência com preço justo e ambiente despojado.
+      </p>
+
+      <!-- Redes Sociais -->
+      <div class="social-icons" aria-label="Redes sociais">
+        <a href="#"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- Nosso Conceito -->
+    <section id="sobre" class="nosso-conceito">
+      <h2>Nosso Conceito</h2>
+      <p>Escolha seu corte de carne, o ponto ideal e um molho especial. Acompanhamos com salada de folhas verdes e nozes.</p>
+      <p><em>Bon Appétit!</em></p>
+    </section>
+
+    <!-- Slides -->
+    <section class="slides" aria-label="Galeria de pratos">
+      <div class="slide" style="background-image:url('IMG/bife-e-legumes-grelhados.jpg');"></div>
+      <div class="slide" style="background-image:url('IMG/bife-frito-na-placa-de-madeira.jpg');"></div>
+      <div class="slide" style="background-image:url('IMG/bife-grelhado-com-batatas-fritas-tomate-grelhado-pimenta-e-molhos.jpg');"></div>
+
+      <button class="prev" aria-label="Slide anterior">&#10094;</button>
+      <button class="next" aria-label="Próximo slide">&#10095;</button>
+    </section>
+
+    <!-- Cardápio -->
+    <section class="cardapio">
+      <h2>Para Compartilhar</h2>
+      <div id="menu-container"></div>
+      <button class="botao-cardapio" onclick="abrirCardapio()">Ver Cardápio</button>
+    </section>
+
+    <!-- Eventos -->
+    <section class="eventos">
+      <h2>Eventos</h2>
+      <div class="galeria-imagens">
+        <img src="IMG/bife-grelhado-com-batatas-fritas-tomate-grelhado-pimenta-e-molhos.jpg" alt="Evento com prato especial" />
+        <img src="IMG/bife-grelhado-guarnecido-com-ervas-secas-e-sal.jpg" alt="Casamento no Le Bife" />
+        <img src="IMG/corte-de-carne-assada-com-molho-de-selecao-2.jpg" alt="Ambiente do bar" />
+      </div>
+
+      <div class="descricao-evento">
+        <p>Ideal para eventos sociais e corporativos com cardápios personalizados e atendimento de excelência.</p>
+        <p>Salões para até 50 convidados com conforto e requinte.</p>
+        <p><strong>Solicite um orçamento!</strong></p>
+        <p><em>Bonne Expérience ! Santé !</em></p>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="container">
+      <h2>Contatos e Reservas</h2>
+
+      <div class="reservas">
+        <p><strong>Endereço:</strong> Rua Pedroso Alvarenga, 1088, Itaim Bibi, São Paulo.</p>
+        <p><strong>Telefone:</strong> (11) 4324-0783 / 4324-0782</p>
+        <p><strong>E-mail:</strong> <a href="mailto:contato@lebife.com.br">contato@lebife.com.br</a></p>
+      </div>
+
+      <div class="horarios">
+        <h3>Horário de Funcionamento</h3>
+        <ul>
+          <li><strong>Domingo:</strong> 12:00 às 17:00</li>
+          <li><strong>Segunda:</strong> 12:00 às 15:00</li>
+          <li><strong>Terça a Quinta:</strong> 12:00 às 15:00 e 19:00 às 23:00</li>
+          <li><strong>Sexta:</strong> 12:00 às 15:00 e 19:00 às 00:00</li>
+          <li><strong>Sábado:</strong> 12:00 às 16:00 e 19:00 às 00:00</li>
+        </ul>
+        <p class="alerta">Consulte nossos horários devido ao protocolo contra Covid-19.</p>
+      </div>
+
+      <div class="informacoes">
+        <h3>Informações</h3>
+        <ul>
+          <li>Acesso para deficientes físicos</li>
+          <li>Capacidade para 120 pessoas</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Le Bife. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    let slideIndex = 0;
+
+    function showSlides() {
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex = (slideIndex + 1 > slides.length) ? 1 : slideIndex + 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 5000);
+    }
+
+    function changeSlide(n) {
+      const slides = document.querySelectorAll(".slide");
+      slideIndex += n;
+      if (slideIndex > slides.length) slideIndex = 1;
+      if (slideIndex < 1) slideIndex = slides.length;
+      slides.forEach(slide => slide.style.display = "none");
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    function abrirCardapio() {
+      window.open("https://exemplo.com/cardapio.pdf", "_blank");
+    }
+
+    document.querySelectorAll('.social-icons i').forEach(icon => {
+      icon.addEventListener('click', () => {
+        alert(`Você clicou no ícone: ${icon.className}`);
+      });
+    });
+
+    showSlides();
+  </script>
+</body>
+</html>
